@@ -136,3 +136,41 @@ footer{background:var(--dark);color:white;padding:50px 0 25px}
 
 /* Keep filtered service cards hidden even though cards are flex containers. */
 .service[hidden],#no-services[hidden]{display:none!important}
+
+/* Shared interactive 3D anatomical tooth component (restored from dantist-1-site). */
+.hero-model{position:relative;isolation:isolate;overflow:visible;min-height:620px;padding:0;display:flex;align-items:center;justify-content:center}
+.hero-model .art-orbit{z-index:-1;pointer-events:none}
+#tooth-canvas{position:absolute;display:block;inset:0;width:100%;height:100%;z-index:2;touch-action:pan-y;cursor:grab;outline-offset:-6px}
+#tooth-canvas:active{cursor:grabbing}
+.tooth-placeholder{position:absolute;width:65%;height:71%;inset:auto;z-index:1;opacity:.8;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 20px 35px #0005)}
+.tooth-placeholder svg{width:100%;height:100%}
+.model-kicker{position:absolute;z-index:4;top:61px;left:24px;font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--accent);font-weight:850;pointer-events:none}
+.model-kicker:before{content:'+';font-size:20px;margin-right:9px}
+.model-card{position:absolute;z-index:5;top:142px;right:-3%;padding:18px 20px;width:193px;border-radius:17px;border:1px solid #ffffff26;backdrop-filter:blur(20px);background:#0a1c1cba;box-shadow:0 20px 40px #0004;pointer-events:none}
+.model-card small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:var(--accent);font-weight:850;margin-bottom:7px}
+.model-card h3{margin:0 0 7px;font-size:20px;letter-spacing:-.05em;color:#fff}
+.model-card p{font-size:11px;line-height:1.7;color:#c9d7d0;margin:0}
+.model-controls{position:absolute;z-index:7;display:flex;gap:5px;bottom:59px;left:50%;transform:translateX(-50%);padding:7px;border-radius:99px;background:#071a1aD9;backdrop-filter:blur(15px);box-shadow:0 18px 40px #0007;border:1px solid #ffffff38}
+.model-controls button{border:0;background:transparent;color:#d0dfda;font-size:11px;font-weight:800;white-space:nowrap;padding:12px 14px;border-radius:90px}
+.model-controls button.active{background:var(--accent);color:var(--dark)}
+.model-instruction{position:absolute;z-index:5;bottom:28px;left:50%;transform:translateX(-50%);font-size:9px;text-transform:uppercase;letter-spacing:.11em;white-space:nowrap;color:#d1ded5;opacity:.82;pointer-events:none}
+.model-labels{position:absolute;inset:0;z-index:5;pointer-events:none}
+.model-label{position:absolute;opacity:0;white-space:nowrap;font-size:10px;color:var(--accent2);font-weight:700;padding:8px 10px;border-radius:99px;border:1px solid color-mix(in srgb,var(--accent) 60%,transparent);background:#081f20dc;transform:translate(-50%,-50%);transition:opacity .2s}
+.model-label.visible{opacity:1}
+.model-tooltip{position:absolute;z-index:9;display:none;pointer-events:none;padding:9px 12px;border-radius:10px;background:var(--accent2);color:var(--dark);font-size:11px;font-weight:800;box-shadow:0 8px 22px #0004}
+.clinic-photo-chip{position:absolute;z-index:6;left:0;top:71%;display:flex;align-items:center;gap:8px;width:150px;background:#ffffffE9;border:1px solid #ffffff9c;border-radius:15px;padding:6px 10px 6px 6px;color:var(--dark);box-shadow:0 10px 28px #0003;pointer-events:none}
+.clinic-photo-chip img{width:47px;height:47px;object-fit:cover;border-radius:9px;flex-shrink:0}
+.clinic-photo-chip span{font-size:10px;line-height:1.35;font-weight:800}
+.trust-yandex{display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:23px 28px;border-radius:20px;background:#fff;border:1px solid var(--line);margin-bottom:0}
+.trust-yandex .score{display:flex;align-items:center;gap:14px;font-weight:800;font-size:23px;color:#d28f38}
+.trust-yandex .score span{display:block;font-size:10px;color:var(--muted);line-height:1.6;font-weight:600}
+.trust-yandex .trust-note{color:var(--muted);font-size:11px;line-height:1.7;max-width:360px}
+.rating-section{padding:34px 0 0}
+.review-section{padding:88px 0;background:#fff}
+.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.review-copy p{font-size:15px;line-height:1.85;color:var(--muted);max-width:480px;margin-top:24px}
+.review-embed{border:1px solid var(--line);border-radius:22px;background:var(--paper);padding:12px;overflow:hidden}
+.review-embed iframe{width:100%;height:530px;border:0;border-radius:14px;background:white}
+.review-embed .review-caption{padding:12px 9px 4px;color:var(--muted);font-size:11px}
+@media(max-width:900px){.hero-model{min-height:580px}.model-card{right:7%}.clinic-photo-chip{left:8%}.review-grid{grid-template-columns:1fr}.review-embed iframe{height:500px}}
+@media(max-width:600px){.hero-model{min-height:485px;margin:0 -12px}.model-kicker{top:22px;left:18px;font-size:9px}.model-card{top:70px;right:0;width:143px;padding:11px 13px}.model-card h3{font-size:14px}.model-card p{font-size:9px}.model-card small{font-size:8px}.model-controls{bottom:58px;max-width:calc(100% - 12px);padding:5px;gap:1px}.model-controls button{padding:11px 9px;font-size:9px}.model-instruction{bottom:26px;font-size:8px;letter-spacing:.01em}.clinic-photo-chip{width:111px;padding:5px;left:2%;top:68%}.clinic-photo-chip img{height:37px;width:37px}.clinic-photo-chip span{font-size:8px}.rating-section{padding:20px 0 0}.trust-yandex{padding:18px;gap:13px}.trust-yandex .score{font-size:19px}.review-section{padding:68px 0}.review-embed iframe{height:500px}}
