@@ -1,0 +1,26 @@
+(()=>{
+const assetManifest=window.GUDAUTO_ASSETS||{logo:'',photos:[]};
+const images=assetManifest.photos;
+const byNumber=n=>images[Number(n)-1]||'';
+document.querySelectorAll('[data-logo]').forEach(el=>{el.src=assetManifest.logo;el.addEventListener('error',()=>el.style.display='none')});
+document.querySelectorAll('img[data-photo]').forEach(el=>{const url=byNumber(el.dataset.photo);if(url){el.src=url;el.decoding='async'}el.addEventListener('error',()=>{el.style.opacity='.35'})});
+const mobileNav=document.getElementById('mobile-nav'),toggle=document.querySelector('.menu-toggle');
+toggle?.addEventListener('click',()=>{let open=mobileNav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню')});
+mobileNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');toggle?.setAttribute('aria-expanded','false')}));
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if('IntersectionObserver' in window&&!reduce){const io=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.13});document.querySelectorAll('.reveal').forEach(e=>io.observe(e))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+document.querySelectorAll('.service-card').forEach(card=>card.addEventListener('pointermove',e=>{let box=card.getBoundingClientRect();card.style.setProperty('--mx',`${e.clientX-box.left}px`);card.style.setProperty('--my',`${e.clientY-box.top}px`)}));
+const gallery=document.getElementById('gallery-grid'),galleryMore=document.getElementById('gallery-more'),lightbox=document.getElementById('lightbox');
+const photoSequence=[1,7,10,11,12,15,16,17,2,4,5,6,8,9,13,14,18,19,20,21,22,23,24,3];
+photoSequence.forEach((n,i)=>{let button=document.createElement('button');button.type='button';button.className='gallery-item'+(i>=8?' is-hidden':'');button.setAttribute('aria-label',`Фото ГудАвто №${n}`);let img=document.createElement('img');img.src=byNumber(n);img.loading='lazy';img.alt=`Фото автосервиса ГудАвто №${n}`;button.append(img);button.addEventListener('click',()=>{let big=lightbox.querySelector('img');big.src=byNumber(n);lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false')});gallery?.append(button)});
+galleryMore?.addEventListener('click',()=>{let hidden=gallery.querySelector('.is-hidden');if(hidden){gallery.querySelectorAll('.is-hidden').forEach(el=>el.classList.remove('is-hidden'));galleryMore.innerHTML='СВЕРНУТЬ ГАЛЕРЕЮ <span>↑</span>'}else{[...gallery.children].slice(8).forEach(el=>el.classList.add('is-hidden'));galleryMore.innerHTML='ПОКАЗАТЬ ЕЩЁ ФОТО <span>↓</span>';gallery.scrollIntoView({behavior:'smooth',block:'start'})}});
+const closeLightbox=()=>{lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true')};lightbox?.addEventListener('click',closeLightbox);
+const modal=document.getElementById('booking-modal'),message=document.getElementById('form-message');let opener=null;
+function openModal(service){opener=document.activeElement;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';if(service){let e=document.getElementById('service-field');if([...e.options].some(o=>o.value===service))e.value=service}message.textContent='';setTimeout(()=>document.getElementById('service-field').focus(),50)}
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';opener?.focus?.()}
+document.querySelectorAll('.js-open-booking').forEach(btn=>btn.addEventListener('click',()=>openModal(btn.dataset.service||'')));
+modal?.querySelectorAll('[data-close]').forEach(btn=>btn.addEventListener('click',closeModal));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(modal.classList.contains('open'))closeModal();if(lightbox?.classList.contains('open'))closeLightbox()}});
+document.getElementById('booking-form')?.addEventListener('submit',async e=>{e.preventDefault();const val=id=>document.getElementById(id).value.trim();let fields={service:val('service-field'),car:val('car-field'),date:val('date-field'),name:val('name-field'),phone:val('phone-field')};const text=`Заявка для ГудАвто (демо)\nУслуга: ${fields.service}\nАвтомобиль: ${fields.car||'Не указан'}\nДата: ${fields.date||'Не указана'}\nИмя: ${fields.name||'Не указано'}\nТелефон: ${fields.phone||'Не указан'}`;try{await navigator.clipboard.writeText(text);message.textContent='Текст заявки скопирован. Отправка в автосервис в демо не подключена.'}catch{message.textContent='Автоматическое копирование недоступно. Используйте данные формы для обращения в ГудАвто.'}});
+const today=new Date();const dateInput=document.getElementById('date-field');if(dateInput)dateInput.min=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
+})();
