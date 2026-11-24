@@ -6,6 +6,7 @@
 - **Арована:** [Открыть макет](https://maripetrova29091996lev-ai.github.io/demo-sites/arovana/) · [исходная карточка](https://yandex.ru/maps/org/arovana/1298143382/)
 - **Олеандр-Мед:** [Открыть макет](https://maripetrova29091996lev-ai.github.io/demo-sites/oleandr-med/) · [карточка Яндекс Карт](https://yandex.ru/maps/org/181915120981/) · Керчь · 3D-зуб · 26 фото · стоматология и косметология · [референсы дизайна](oleandr-med/DESIGN_REFERENCES.md)
 - **МиксДент:** [Открыть макет](https://maripetrova29091996lev-ai.github.io/demo-sites/miksdent/) · [исходная карточка](https://yandex.ru/maps/org/miksdent/131697013550/) · 66 фотографий и 3D-модель зуба
+- **Приоритет-Дента:** [Открыть макет](https://maripetrova29091996lev-ai.github.io/demo-sites/prioritet-denta/) · [Яндекс Карты](https://yandex.ru/maps/org/prioritet_denta/1084406305/) · Екатеринбург, Фрунзе, 35А · 3D-зуб · 8 фото · рейтинг 4,2 по сохранённой карточке (просмотр 24.11.2026). Фирменный логотип не найден; палитра и знак предложены для согласования. График уточняется по телефону.
 - [Каталог демо-сайтов](https://maripetrova29091996lev-ai.github.io/demo-sites/)
 
 ## GitHub Pages
