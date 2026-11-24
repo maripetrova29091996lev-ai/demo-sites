@@ -7,6 +7,8 @@
 - **Олеандр-Мед:** [Открыть макет](https://maripetrova29091996lev-ai.github.io/demo-sites/oleandr-med/) · [карточка Яндекс Карт](https://yandex.ru/maps/org/181915120981/) · Керчь · 3D-зуб · 26 фото · стоматология и косметология · [референсы дизайна](oleandr-med/DESIGN_REFERENCES.md)
 - **МиксДент:** [Открыть макет](https://maripetrova29091996lev-ai.github.io/demo-sites/miksdent/) · [исходная карточка](https://yandex.ru/maps/org/miksdent/131697013550/) · 66 фотографий и 3D-модель зуба
 - **Приоритет-Дента:** [Открыть макет](https://maripetrova29091996lev-ai.github.io/demo-sites/prioritet-denta/) · [Яндекс Карты](https://yandex.ru/maps/org/prioritet_denta/1084406305/) · Екатеринбург, Фрунзе, 35А · 3D-зуб · 8 фото · рейтинг 4,2 по сохранённой карточке (просмотр 24.11.2026). Фирменный логотип не найден; палитра и знак предложены для согласования. График уточняется по телефону.
+- **Приоритет-Дента — Кофе и орех:** [Тёмный тёплый макет](https://maripetrova29091996lev-ai.github.io/demo-sites/prioritet-denta-coffee/) · кофейный, ореховый, бежевый.
+- **Приоритет-Дента — Молочный беж:** [Светлый тёплый макет](https://maripetrova29091996lev-ai.github.io/demo-sites/prioritet-denta-beige/) · молочный фон, коричневые акценты, контрастная 3D-панель. Обе версии вдохновлены фотографией зоны ресепшена; исходная синяя версия сохранена. Сведения и функции унаследованы из исходного макета.
 - [Каталог демо-сайтов](https://maripetrova29091996lev-ai.github.io/demo-sites/)
 
 ## GitHub Pages
